@@ -71,7 +71,7 @@ The **staging_events** table contains the following fields with their respective
 
 | Field           | Data Type    |
 |-------------    | ------------ |
-| artist          | VARCHAR      |
+| artists         | VARCHAR      |
 | auth            | VARCHAR      |
 | first_name      | VARCHAR      |
 | gender          | VARCHAR      |
@@ -84,7 +84,7 @@ The **staging_events** table contains the following fields with their respective
 | page            | VARCHAR      |
 | registration    | FLOAT        |
 | session_id      | INTEGER      |
-| song            | VARCHAR      |
+| songs           | VARCHAR      |
 | status          | INTEGER      |
 | ts              | TIMESTAMP    |
 | user_agent      | VARCHAR      |
