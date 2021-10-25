@@ -233,7 +233,7 @@ songplay_table_count = ("""
 """)
 
 user_table_count = ("""
-   SELECT count(*) FROM user
+   SELECT count(*) FROM users
 """)
 
 song_table_count = ("""
