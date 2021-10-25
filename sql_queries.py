@@ -33,7 +33,7 @@ time_table_drop = "DROP TABLE IF EXISTS %s" % time_table
 # CREATE STAGING TABLES
 staging_events_table_create= ("""
     CREATE TABLE IF NOT EXISTS staging_events(
-        artists              VARCHAR,
+        artists             VARCHAR,
         auth                VARCHAR,
         first_name          VARCHAR,
         gender              VARCHAR,
@@ -46,7 +46,7 @@ staging_events_table_create= ("""
         page                VARCHAR,
         registration        FLOAT,
         session_id          INTEGER,
-        songs                VARCHAR,
+        songs               VARCHAR,
         status              INTEGER,
         ts                  TIMESTAMP,
         user_agent          VARCHAR,
@@ -71,23 +71,23 @@ staging_songs_table_create = ("""
 
 user_table_create = (""" 
     CREATE TABLE IF NOT EXISTS users (
-        user_id INTEGER NOT NULL DISTKEY, 
-        first_name VARCHAR,
-        last_name VARCHAR,
-        gender VARCHAR,
-        level VARCHAR,
+        user_id             INTEGER NOT NULL DISTKEY, 
+        first_name          VARCHAR,
+        last_name           VARCHAR,
+        gender              VARCHAR,
+        level               VARCHAR,
         PRIMARY KEY(user_id)
     ); 
 """)
 
 song_table_create = ("""
     CREATE TABLE IF NOT EXISTS songs (
-         song_id        VARCHAR NOT NULL,
-         title          VARCHAR,
-         artist_id      VARCHAR DISTKEY,
-         artist_name    VARCHAR,
-         year           INTEGER,
-         duration       FLOAT,
+         song_id            VARCHAR NOT NULL,
+         title              VARCHAR,
+         artist_id          VARCHAR DISTKEY,
+         artist_name        VARCHAR,
+         year               INTEGER,
+         duration           FLOAT,
          PRIMARY KEY (song_id)
     );
 """)
@@ -105,13 +105,13 @@ artist_table_create = ("""
 
 time_table_create = ("""
     CREATE TABLE IF NOT EXISTS time (
-        start_time      TIMESTAMP NOT NULL DISTKEY SORTKEY,
-        hour            INTEGER,
-        day             INTEGER,
-        week            INTEGER,
-        month           INTEGER,
-        year            INTEGER,
-        weekday         VARCHAR(10),
+        start_time          TIMESTAMP NOT NULL DISTKEY SORTKEY,
+        hour                INTEGER,
+        day                 INTEGER,
+        week                INTEGER,
+        month               INTEGER,
+        year                INTEGER,
+        weekday             VARCHAR(10),
         PRIMARY KEY (start_time)
     );
 """)
