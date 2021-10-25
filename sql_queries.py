@@ -94,11 +94,11 @@ song_table_create = ("""
 
 artist_table_create = ("""
     CREATE TABLE IF NOT EXISTS artists (
-        artist_id        VARCHAR NOT NULL DISTKEY,
-        artist_name      VARCHAR,
-        location         VARCHAR,
-        latitude         FLOAT,
-        longitude        FLOAT,
+        artist_id           VARCHAR NOT NULL DISTKEY,
+        artist_name         VARCHAR,
+        location            VARCHAR,
+        latitude            FLOAT,
+        longitude           FLOAT,
         PRIMARY KEY (artist_id)
     );
 """)
