@@ -71,7 +71,7 @@ staging_songs_table_create = ("""
 
 user_table_create = (""" 
     CREATE TABLE IF NOT EXISTS users (
-        user_id INTEGER DISTKEY, 
+        user_id INTEGER NOT NULL DISTKEY, 
         first_name VARCHAR,
         last_name VARCHAR,
         gender VARCHAR,
@@ -82,7 +82,7 @@ user_table_create = ("""
 
 song_table_create = ("""
     CREATE TABLE IF NOT EXISTS songs (
-         song_id        VARCHAR,
+         song_id        VARCHAR NOT NULL,
          title          VARCHAR,
          artist_id      VARCHAR DISTKEY,
          artist_name    VARCHAR,
@@ -94,7 +94,7 @@ song_table_create = ("""
 
 artist_table_create = ("""
     CREATE TABLE IF NOT EXISTS artists (
-        artist_id        VARCHAR DISTKEY,
+        artist_id        VARCHAR NOT NULL DISTKEY,
         artist_name      VARCHAR,
         location         VARCHAR,
         latitude         FLOAT,
@@ -105,7 +105,7 @@ artist_table_create = ("""
 
 time_table_create = ("""
     CREATE TABLE IF NOT EXISTS time (
-        start_time      TIMESTAMP DISTKEY SORTKEY,
+        start_time      TIMESTAMP NOT NULL DISTKEY SORTKEY,
         hour            INTEGER,
         day             INTEGER,
         week            INTEGER,
@@ -171,7 +171,7 @@ songplay_table_insert = ("""
         FROM staging_events se
         JOIN staging_songs ss
             ON (ss.title = se.songs
-            AND ss.artist_name = se.artists)
+            AND ss.artist_name = se.artists AND ss.duration = se.length)
             AND se.page  =  'NextSong'
 """)
 
